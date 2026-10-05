@@ -1,0 +1,502 @@
+@import url(menu.css);
+@import url(banner.css);
+@import url(blog.css);
+@import url(info.css);
+
+/* ================= REGLAS GENERALES Y NAVEGACIÓN SUAVE ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Desplazamiento exacto sin tapar los títulos */
+}
+
+body {
+    font-family: Tahoma, Geneva, sans-serif;
+    background-color: #F4F6F1; /* Fondo suave natural */
+    color: #3D2612; /* Texto marrón semilla */
+}
+
+.contenedor {
+    width: 95%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* ================= ENCABEZADO / HEADER ================= */
+/* ================= LOGO HEADER ================= */
+.logo-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-header img {
+    height: 60px; /* Tamaño del logo en la cabecera */
+    width: auto;
+    object-fit: contain;
+    border-radius: 6px; /* Opcional: esquinas suavizadas */
+}
+
+.logo-header span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #F7C844; /* Amarillo pulpa Jackfruit */
+    text-transform: uppercase;
+}
+
+/* Ajuste responsive para pantallas pequeñas */
+@media (max-width: 480px) {
+    .logo-header span {
+        font-size: 15px;
+    }
+    
+    .logo-header img {
+        height: 45px;
+    }
+}
+header {
+    width: 100%;
+    height: 100px;
+    background: #22481D; /* Verde cáscara de Jackfruit */
+    color: #FFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    border-bottom: 4px solid #E9B44C; /* Amarillo pulpa de Jackfruit */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+h1 {
+    font-size: 22px;
+    color: #F7C844; /* Amarillo vibrante */
+}
+
+/* ================= SECCIONES GENERALES (ESTRUTURA EN CUADROS) ================= */
+section {
+    width: 100%;
+    padding: 40px 0;
+}
+
+/* Títulos principales de cada sección */
+section h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #22481D;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+/* Textos de introducción */
+.texto-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4A5D4E;
+}
+
+/* ================= SECCIÓN NOSOTROS ================= */
+#nosotros {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E2EAD8;
+}
+
+.nosotros-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 25px;
+}
+
+.caja-nosotros {
+    flex: 1 1 300px;
+    background: #F9FAF7;
+    border: 2px solid #D5E2C8;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.caja-nosotros h3 {
+    color: #22481D;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.caja-nosotros p {
+    line-height: 1.6;
+    color: #3D2612;
+}
+
+.nosotros-contenido img {
+    width: 100%;
+    max-width: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #E9B44C;
+}
+
+/* ================= SECCIÓN PRODUCTOS (GRID DE TARJETAS) ================= */
+#productos {
+    background-color: #F3F7EF; /* Verde menta/crema muy claro */
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.producto {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 2px solid #E2EAD8;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.producto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(34, 72, 29, 0.15);
+    border-color: #E9B44C;
+}
+
+.producto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.producto-contenido {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.producto-contenido h3 {
+    color: #22481D;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.producto-contenido p {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.producto-contenido a {
+    display: inline-block;
+    text-align: center;
+    background: #E9B44C;
+    color: #22481D;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.producto-contenido a:hover {
+    background: #F7C844;
+}
+
+/* ================= SECCIÓN VISITAS ================= */
+#visitas {
+    background-color: #FFFFFF;
+}
+
+.visitas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.visita {
+    background: #F9FAF7;
+    border-radius: 12px;
+    border: 2px solid #E2EAD8;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.visita img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.visita h3 {
+    color: #22481D;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.visita p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* ================= SECCIÓN SERVICIOS ================= */
+#servicios {
+    background-color: #E8EEDF;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.servicio {
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 2px solid #C2D3B8;
+    padding: 25px 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.servicio:hover {
+    transform: translateY(-5px);
+    border-color: #E9B44C;
+}
+
+.servicio span {
+    font-size: 36px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.servicio h3 {
+    color: #22481D;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.servicio p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* ================= SECCIÓN CONTACTO ================= */
+#contacto {
+    background-color: #FFFFFF;
+}
+
+.contacto-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contacto-caja {
+    flex: 1 1 250px;
+    max-width: 320px;
+    background: #F9FAF7;
+    border: 2px solid #E2EAD8;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contacto-caja span {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contacto-caja h3 {
+    color: #22481D;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.contacto-caja p {
+    color: #3D2612;
+    font-weight: bold;
+}
+/* ================= FORMULARIO DE CONTACTO ================= */
+.contacto-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contacto-info {
+    flex: 1 1 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contacto-caja {
+    background: #F9FAF7;
+    border: 2px solid #E2EAD8;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.formulario-contacto {
+    flex: 1 1 450px;
+    background: #FFFFFF;
+    border: 2px solid #D5E2C8;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.formulario-contacto h3 {
+    color: #22481D;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.filtro-dos-campos {
+    display: flex;
+    gap: 15px;
+}
+
+.filtro-dos-campos .campo-grupo {
+    flex: 1;
+}
+
+.formulario-contacto label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #3D2612;
+    margin-bottom: 6px;
+}
+
+.formulario-contacto input,
+.formulario-contacto select,
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #C2D3B8;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    background-color: #FBFDF9;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto select:focus,
+.formulario-contacto textarea:focus {
+    border-color: #E9B44C;
+    box-shadow: 0 0 0 3px rgba(233, 180, 76, 0.25);
+}
+
+.btn-enviar {
+    width: 100%;
+    background-color: #22481D;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #1a3816;
+    transform: translateY(-2px);
+}
+
+/* Ajuste para pantallas móviles */
+@media (max-width: 600px) {
+    .filtro-dos-campos {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* ================= PIE DE PÁGINA / FOOTER ================= */
+footer {
+    background-color: #22481D;
+    color: #FFFFFF;
+    padding: 30px 0 20px 0;
+    border-top: 4px solid #E9B44C;
+    text-align: center;
+}
+
+footer h3 {
+    color: #F7C844;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+footer p {
+    font-size: 14px;
+    color: #E2EAD8;
+    margin-bottom: 15px;
+}
+
+.sociales {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.sociales a {
+    color: #E9B44C;
+    font-size: 26px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.sociales a:hover {
+    color: #F7C844;
+    transform: translateY(-3px);
+}
+
+.copy {
+    font-size: 13px;
+    color: #A3B899;
+}
